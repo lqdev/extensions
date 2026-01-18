@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Microsoft.Extensions.AI</RootNamespace>
+    <Description>ASP.NET Core middleware for exposing IChatClient implementations as OpenResponses-compliant endpoints.</Description>
+    <Workstream>AI</Workstream>
+    <ForceLatestDotnetVersions>true</ForceLatestDotnetVersions>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Stage>preview</Stage>
+    <EnablePackageValidation>false</EnablePackageValidation>
+    <MinCodeCoverage>0</MinCodeCoverage>
+    <MinMutationScore>0</MinMutationScore>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+    <NoWarn>$(NoWarn);MEAI001</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <InjectExperimentalAttributeOnLegacy>true</InjectExperimentalAttributeOnLegacy>
+    <InjectSharedDiagnosticIds>true</InjectSharedDiagnosticIds>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenAI" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Microsoft.Extensions.AI.Abstractions/Microsoft.Extensions.AI.Abstractions.csproj" />
+    <ProjectReference Include="../Microsoft.Extensions.AI.OpenAI/Microsoft.Extensions.AI.OpenAI.csproj" />
+  </ItemGroup>
+
+</Project>
